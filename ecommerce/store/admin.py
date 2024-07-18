@@ -2,4 +2,6 @@ from django.contrib import admin
 from store.models import ContactInfo
 
 # Register your models here.
-admin.site.register(ContactInfo)
+class ContactInfoAdmin(admin.ModelAdmin):
+    list_display = ('id','name', 'email', 'phone', 'subject')
+admin.site.register(ContactInfo, ContactInfoAdmin)
