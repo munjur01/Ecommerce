@@ -8,7 +8,7 @@ def IndexView(request):
 def ContactView(request):
     if request.method == 'GET':
         form = ContactForm()
-        return render(request, 'contact.html', {'form': form})
+        return render(request, 'contact/contact.html', {'form': form})
     
     if request.method == 'POST':
         form = ContactForm(request.POST)
@@ -18,4 +18,4 @@ def ContactView(request):
     else:
         form = ContactForm()
         
-    return render(request, 'contact.html', {'form': form})
+    return render(request, 'contact/contact.html', {'form': form})

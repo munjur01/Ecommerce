@@ -12,7 +12,7 @@ def RegisterView(request):
             return redirect('/')
     else:
         form = RegisterForm()
-    return render(request, 'register.html', {'form': form})
+    return render(request, 'user_app/register.html', {'form': form})
 
 def LoginView(request):
     if request.method == 'POST':
@@ -24,7 +24,7 @@ def LoginView(request):
             return redirect('/')
         else:
             return HttpResponse("Username or Password is incorrect!!!")
-    return render(request, 'login.html')
+    return render(request, 'user_app/login.html')
 
 @login_required
 def LogoutView(request):
